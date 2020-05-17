@@ -1,3 +1,21 @@
-<h1><%= @question.title %></h1>
 
-<p><%= @question.content %></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <col-4 class="col-md-6">
+      <h1><%= @question.title %></h1>
+
+      <p><%= @question.content %></p>
+
+      <ul>
+        <% @question.answers.each do |answer| %>
+          <li><%= answer.content %> - <%= answer.user.username %></li>
+        <% end %>
+      </ul>
+
+      <%= simple_form_for [@question, @answer] do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit %>
+      <% end %>
+    </col-4>
+  </div>
+</div>
