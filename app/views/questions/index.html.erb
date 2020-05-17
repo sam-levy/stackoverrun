@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 col-md-8">
+      <h1>Questions</h1>
+
+      <ul>
+        <% @questions.each do |question| %>
+          <li><%= question.title %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
