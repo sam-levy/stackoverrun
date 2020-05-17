@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true, length: {minimum: 3}
 
   has_many :questions
+  has_many :answers
 end
